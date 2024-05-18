@@ -1,0 +1,13 @@
+<table style="align-content: center;border: 1px solid;">
+    @for (item of a; track item;let rowIndex = $index) {
+        <tr>
+            @for (item2 of a[rowIndex]; track $index;) {
+                <td>
+                    <button style="background: none;border: none;" (click)="onClick(item2)">{{item2 === 0 ?'':item2}}</button>
+                </td>
+            }
+        </tr>
+    }
+
+</table>
+<button (click)="onClickShuffle()">สุ่ม</button>{{timer.hr+':'+timer.min+':'+timer.sec+':'+timer.ms}}<button (click)="reset()">รีเซ็ท</button>
