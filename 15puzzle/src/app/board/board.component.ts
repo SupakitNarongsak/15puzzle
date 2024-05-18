@@ -54,9 +54,10 @@ export class BoardComponent implements OnInit{
   }
   onClickShuffle(){
     let flat = this.a.flat()
-    let shuffle = this.shuffle(flat)
-    while(!this.isSolvable(shuffle)){ 
+    let shuffle 
+    while(true){ 
       shuffle = this.shuffle(flat)
+      if(this.isSolvable(shuffle))break;
     }
     this.a = this.chunkArray(shuffle,4)
   }
