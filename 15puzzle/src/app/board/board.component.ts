@@ -53,6 +53,7 @@ export class BoardComponent implements OnInit{
     clearInterval(this.startTimer)
   }
   onClickShuffle(){
+    this.running = false
     let flat = this.a.flat()
     let shuffle 
     while(true){ 
