@@ -82,7 +82,7 @@ export class BoardComponent implements OnInit{
       [13,14,15,0]
     ] 
     let emptyPos = this.findIndex2D(this.a,0) || []
-    let numAroundEmpty = [...this.getPosPosible(this.a,emptyPos)]
+    let numAroundEmpty = [...this.getPosAroundEmpty(this.a,emptyPos)]
     if(numAroundEmpty.filter(a=>a==data).length > 0 ){
       this.swaptile(this.findIndex2D(this.a,data)||[],emptyPos,data)
       if(this.running === false){ 
@@ -127,7 +127,7 @@ export class BoardComponent implements OnInit{
       }
       return inversions;
   }
-  getPosPosible(array: any,emptypos: any){
+  getPosAroundEmpty(array: any,emptypos: any){
     let a = []
     array[emptypos[0]-1]!=undefined ? a.push(array[emptypos[0]-1][emptypos[1]]):''
     array[emptypos[0]][emptypos[1]-1]!=undefined ? a.push(array[emptypos[0]][emptypos[1]-1]):''
